@@ -12,7 +12,7 @@ def convertFromDecToHex(num):
     while i / 16 >= 1:
         tempValue += f"{numMap[i%16]}"
         i = math.floor(i/16)
-    tempValue += f"{i}"
+    tempValue += f"{numMap[i]}"
     return tempValue[::-1]
 
 def convertFromDecToBin(num):
@@ -51,7 +51,7 @@ def convertFromBinToDec(num):
     return tempValue
 
 def userInput():
-    value = input("Kérlek adj meg egy számots:")
+    value = input("Kérlek adj meg egy számot:")
     match value[0:2]:
         case "0b":
             print(f"A szám 10-es számrendszerben: {convertFromBinToDec(value[2:])}\nA szám 16-os számrendszerben: {convertFromDecToHex(convertFromBinToDec(value[2:]))} ")
@@ -67,7 +67,3 @@ def main():
 
 
 main()
-
-
-        
-            
